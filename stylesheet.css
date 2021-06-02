@@ -1,3 +1,14 @@
+:root{
+    --accent-100: hsl(151, 67%, 72%);
+    --accent-100T: hsla(151, 67%, 72%, 40%);
+    --accent-150: hsl(151, 67%, 52%);
+    --accent-150T: hsla(151, 67%, 52%, 90%);
+    --accent-200: hsl(122, 100%, 79%);
+    --accent-300: hsl(113, 100%, 83%);
+    --accent-400: hsl(99, 100%, 86%);
+    --accent-500: hsl(68, 53%, 92%);
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -12,13 +23,14 @@ body{
     z-index: 100;
     top: 0;
     left: 0;
-    background-color: palegoldenrod;
+    background-color: var(--accent-500);
     width: 100vw;
     height: 70px;
     transition: height .2s, box-shadow .2s;
     display: flex;
     flex-direction: row;
     align-items: center;
+    box-shadow: 0px 7px 35px -15px rgba(0, 0, 0, 0.40);
 }
 
 .hLogo{
@@ -42,21 +54,13 @@ body{
     margin-left: 15px;
 }
 
-.header:hover{
-    height: 100px;
-    box-shadow: 0px 7px 35px -15px rgba(0, 0, 0, 0.40);
-}
-
-.header:hover .hLogo{
-    width: 5%;
-}
-
 .footer{
     position: absolute;
-    top: 95%;
+    top: 97.5%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: aquamarine;
+    box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.40);
+    background-color: var(--accent-500);
     width: 60vw;
     height: 700px;
     border-radius: 15px;
@@ -76,8 +80,11 @@ body{
 }
 
 .mLeft{
-    width: 15vw;
-    background-color: #E8E8E8;
+    position: absolute;
+    z-index: 90;
+    width: 7vw;
+    background-color: var(--accent-150T);
+    backdrop-filter: blur(10px);
     transition: width .4s;
     display: flex;
     flex-direction: column;
@@ -87,51 +94,140 @@ body{
 }
 
 .mLeft:hover{
-    width: 30vw;
+    width: 15vw;
+    box-shadow: 0px 7px 35px -15px rgba(0, 0, 0, 0.40);
+}
+
+.mLeft:hover .mlLogo{
+    height: 30%;
+    transition: height .4s;
+}
+
+.mLeft:hover .mlInfo{
+    opacity: 1;
+    transition: opacity .2s;
+    transition-delay: .2s;
 }
 
 .mRight{
     width: 100%;
-    background-color: antiquewhite;
+    background-color: var(--accent-100);
     overflow: scroll;
+    padding-left: 150px;
 }
 
 .mlLogo{
-    background-image: url("imgs/logo4.png");
+    background-image: url("imgs/l4transp.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    height: 50%;
+    height: 20%;
 }
 
 .mlInfo{
+    opacity: 0;
     padding: 10px;
     width: 30ch;
     text-align: center;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .mrHead{
+    box-sizing: border-box;
     height: 60px;
     width: 100%;
     font-size: 30px;
     font-weight: 500;
-    background-color: inherit;
+    background-color: var(--accent-100T);
+    backdrop-filter: blur(10px);
     position: fixed;
-    padding: 10px 0 0 20px;
+    z-index: 1;
+    padding: 15px 0 0 20px;
 }
 
 .mrProjects{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    padding: 70px 0 70px 15px;
+    padding: 80px 0 50px 15px;
 }
 
 .mrProj{
-    min-width: 19%;
-    height: 400px;
-    background-color: wheat;
+    max-width: 19%;
+    height: 380px;
+    background-color: var(--accent-300);
     border-radius: 10px;
     box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.40);
+    transition: box-shadow .2s, transform .3s;
+    padding: 2px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.mrProj:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+}
+
+.mrpHeroImg{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 80%;
+    background-color: whitesmoke;
+    border-radius: inherit;
+}
+
+.mrpTextContent{
+    padding: 0 15px;
+}
+
+.mrpTextContent::before{
+    content: attr(data-title);
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.mrpHI1{
+    background-image: url("hero/1.jpg");
+}
+
+.mrpHI2{
+    background-image: url("hero/2.png");
+}
+
+.mrpHI3{
+    background-image: url("hero/3.jpg");
+}
+
+.mrpHI4{
+    background-image: url("hero/4.png");
+}
+
+.mrpHI5{
+    background-image: url("hero/5.jpg");
+}
+
+.mrpHI6{
+    background-image: url("hero/6.png");
+}
+
+.mrpHI7{
+    background-image: url("hero/7.jpg");
+}
+
+.mrpHI8{
+    background-image: url("hero/8.png");
+}
+
+.mrpHI9{
+    background-image: url("hero/9.jpg");
+}
+
+.mrpHI10{
+    background-image: url("hero/10.png");
 }
