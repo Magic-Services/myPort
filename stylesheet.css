@@ -33,13 +33,42 @@ body{
     box-shadow: 0px 7px 35px -15px rgba(0, 0, 0, 0.40);
 }
 
+
+.hInfo{
+    opacity: 1;
+    display: none;
+    position: absolute;
+    top: 105%;
+    right: 5px;
+    padding: 20px;
+    width: 30ch;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 7px;
+    background-color: var(--accent-150);
+    border: 2px solid green;
+}
+
+.hInfo::before{
+    content: '';
+    border: 10px solid transparent;
+    border-bottom-color: green;
+    width: 0px;
+    height: 20px;
+    position: absolute;
+    top: -40px;
+    right: 10px;
+}
+
 .hLogo{
     background-image: url("imgs/l4transp.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 4%;
+    width: 60px;
     height: 100%;
+    margin-left: 10px;
     transition: width .2s;
     cursor: pointer;
 }
@@ -73,65 +102,9 @@ body{
     position: absolute;
     bottom: 0;
     display: flex;
-}
-
-.mainSect{
-    height: 100%;
-}
-
-.mLeft{
-    position: absolute;
-    z-index: 90;
-    width: 7vw;
-    background-color: var(--accent-150T);
-    backdrop-filter: blur(10px);
-    transition: width .4s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20px;
-}
-
-.mLeft:hover{
-    width: 15vw;
-    box-shadow: 0px 7px 35px -15px rgba(0, 0, 0, 0.40);
-}
-
-.mLeft:hover .mlLogo{
-    height: 30%;
-    transition: height .4s;
-}
-
-.mLeft:hover .mlInfo{
-    opacity: 1;
-    transition: opacity .2s;
-    transition-delay: .2s;
-}
-
-.mRight{
-    width: 100%;
     background-color: var(--accent-100);
     overflow: scroll;
-    padding-left: 150px;
-}
-
-.mlLogo{
-    background-image: url("imgs/l4transp.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 20%;
-}
-
-.mlInfo{
-    opacity: 0;
-    padding: 10px;
-    width: 30ch;
-    text-align: center;
-    font-size: 16px;
-    font-weight: 500;
+    padding: 0;
 }
 
 .mrHead{
@@ -151,12 +124,15 @@ body{
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    padding: 80px 0 50px 15px;
+    gap: 25px;
+    padding: 80px 0 50px 0;
+    height: fit-content;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .mrProj{
-    max-width: 19%;
+    width: 30%;
     height: 380px;
     background-color: var(--accent-300);
     border-radius: 10px;
@@ -165,10 +141,11 @@ body{
     padding: 2px;
     overflow: hidden;
     box-sizing: border-box;
+    transform: scale(1);
 }
 
 .mrProj:hover{
-    transform: translateY(-10px);
+    transform: scale(1.05);
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
 }
 
